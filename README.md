@@ -20,7 +20,8 @@ The app is designed to be performant, scalable, and easily maintainable, using m
 
 ```mermaid
 graph TD
-  A[User Interface (React)] --> B[Azure Static Web Apps]
-  B --> C[Azure Functions (API)]
-  C --> D[Azure Cosmos DB]
+  A["User Interface (React)"] --> B["Azure Static Web Apps"]
+  B --> C["Azure Functions (API)"]
+  C --> D["Azure Cosmos DB"]
+
 
