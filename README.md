@@ -23,3 +23,4 @@ graph TD
   A[User Interface (React)] --> B[Azure Static Web Apps]
   B --> C[Azure Functions (API)]
   C --> D[Azure Cosmos DB]
+
