@@ -1,69 +1,25 @@
-# 📋 Task Manager Web App (Azure + CI/CD)
+# Task Manager - Frontend
 
-A modern full-stack **Task Manager Web App** built using **React**, **Azure Functions**, **Cosmos DB**, and deployed via **Azure Static Web Apps** with automated **CI/CD using GitHub Actions**. This project showcases the complete DevOps lifecycle, from development to cloud deployment — all within the **Azure Free Tier**.
+## Project Overview
 
----
+This project is the frontend application of the Task Manager built with React. It provides a user-friendly interface to create, update, and manage tasks effectively. The frontend communicates with backend APIs hosted on Azure Functions and stores data in Cosmos DB.
 
-## 🌐 Live Demo
+The app is designed to be performant, scalable, and easily maintainable, using modern React features and best practices.
 
-🔗 [Visit the Live App](https://delightful-pond-0b6e68b1e.6.azurestaticapps.net)
+## Tech Stack
 
----
+| Technology                       | Purpose            |
+| -------------------------------- | ------------------ |
+| React                            | Frontend framework |
+| Azure Static Web Apps            | Hosting frontend   |
+| Azure Functions                  | Backend APIs       |
+| Azure Cosmos DB                  | NoSQL Database     |
+| GitHub Actions / Azure Pipelines | CI/CD automation   |
 
-## 📌 Features
+## Architecture Diagram
 
-- ✅ User-friendly task management interface
-- ✅ Create, update, delete, and mark tasks
-- ✅ Real-time sync via Azure Functions and Cosmos DB
-- ✅ Scalable serverless backend
-- ✅ Fully automated GitHub Actions CI/CD pipeline
-- ✅ Zero-cost Azure deployment
-
----
-
-## ⚙️ Tech Stack
-
-| Layer             | Technology                  |
-|------------------|-----------------------------|
-| Frontend         | React + TailwindCSS         |
-| Backend API      | Azure Functions (Node.js)   |
-| Database         | Azure Cosmos DB (NoSQL)     |
-| CI/CD            | GitHub Actions              |
-| Hosting          | Azure Static Web Apps       |
-| Deployment Token | Managed via GitHub Secrets  |
-
----
-
-## 🏗️ Architecture Overview
-
-```plaintext
-        ┌────────────┐        HTTP        ┌──────────────┐        NoSQL API       ┌──────────────┐
-        │   Browser  ├───────────────────▶│ Azure Static │──────────────────────▶│ Azure Cosmos │
-        │  (React UI)│   + GitHub Pages  │  Web Apps    │  Triggers via API     │     DB       │
-        └────────────┘                   └──────┬───────┘                       └──────────────┘
-                                                │
-                                                ▼
-                                      ┌─────────────────────┐
-                                      │ Azure Functions API │
-                                      │  (CRUD operations)  │
-                                      └─────────────────────┘
-
-🛠️ Project Structure
-
-task-manager/
-├── frontend/             # React frontend
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── ...
-├── api/                  # Azure Functions (Node.js)
-│   ├── createTask/
-│   ├── getTasks/
-│   ├── updateTask/
-│   ├── deleteTask/
-│   └── ...
-├── .github/
-│   └── workflows/
-│       └── azure-static-web-apps.yml
-├── README.md
-└── ...
+```mermaid
+graph TD
+  A[User Interface (React)] --> B[Azure Static Web Apps]
+  B --> C[Azure Functions (API)]
+  C --> D[Azure Cosmos DB]
